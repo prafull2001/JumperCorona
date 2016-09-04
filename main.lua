@@ -7,5 +7,7 @@
 -- Your code here
 
 local hero = require("hero")
+local obstacle = require("obstacle")
+local environment = require("environment")
 
---local player = hero.new("Prafull", 0, 10)
+local Player = hero.new("Player", 0, 0)
