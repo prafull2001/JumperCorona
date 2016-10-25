@@ -11,15 +11,16 @@ local hero = require("hero")
 local obstacle = require("obstacle")
 local environment = require("environment")
 
-local ninja = display.newImage("Ninja.JPG", 50, 250)
-ninja:scale(.08, .08)
-
 
 -- load Box2D physics engine 
 local Physics = require("physics")
 
 -- start engine
 Physics.start()
+
+
+local ninja = display.newImage("Ninja.JPG", 50, 250)
+ninja:scale(.08, .08)
 
 
 -- give ninja physical body 
