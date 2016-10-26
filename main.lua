@@ -24,4 +24,4 @@ ninja:scale(.08, .08)
 
 
 -- give ninja physical body 
-Physics.addBody(ninja, "dynamic", {radius = 50, bounce = 0.3})
+Physics.addBody(ninja, "static", {radius = 50, bounce = 0})
