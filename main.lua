@@ -3,25 +3,29 @@
 -- main.lua
 
 
--- we'll be working from 'main.lua' for now, research to be done on using classes...
 
+require("30logglobal")
 
---creating instances of each class, ignore for now
-local hero = require("hero")
+local hero = require("hero") 
 local obstacle = require("obstacle")
 local environment = require("environment")
 
 
+local Jumper = hero:new("Jumper", "Ninja.JPG", 50, 250)
+local Block = obstacle:new("Block", 50, 250)
+local Ground = environment:new("Ground", 50, 250)
 -- load Box2D physics engine 
 local Physics = require("physics")
+
+print(Jumper.height)
 
 -- start engine
 Physics.start()
 
 
-local ninja = display.newImage("Ninja.JPG", 50, 250)
-ninja:scale(.08, .08)
+
+--ninja:scale(.08, .08)
 
 
--- give ninja physical body 
-Physics.addBody(ninja, "static", {radius = 50, bounce = 0})
+
+
