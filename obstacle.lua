@@ -1,3 +1,5 @@
+local class = require("30logglobal")
+
 local obstacle = class()
 
 obstacle._name = "obstacle"

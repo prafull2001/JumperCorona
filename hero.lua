@@ -1,16 +1,31 @@
+local class = require("30logglobal")
+
 local hero = class()
 
-hero._name = "hero"
+hero.__name = "hero"
 
-function hero:_init(aName, anImage, aHeight, aWidth)
-	self.name = AaNme
-	self.image = anImage
-	self.height = aHeight
-	self.width = aWidth
+function hero:__init(aName, anX, aY)
+	self.name = aName
+	self.x = anX
+	self.y = aY
+
+
+
+	
+	
+	--self.image = ninjaImage
+	--Physics.addBody(ninjaImage, "dynamic", {radius = 50, bounce = .3})
+
+	
+	print("Printing Something" .. self.name .. "<<")
+	print("Printing Something else" .. self.image.x .. "<<")
+
 end
 
 
 function hero:jump()
+
+	--ninjaImage:applyLinearImpulse(0, -0.75, self.x, self.y)
 
 end
 
@@ -18,14 +33,5 @@ return hero
 
 
 
---[[
 
-Physics.addBody(ninja, "dynamic", {radius = 50, bounce = .3})
 
-function ninjaJump()
-	ninja:applyLinearImpulse(0, -0.75, ninja.x, ninja.y)
-end
-
-ninja:addEventListener("tap", ninjaJump)
-
-]]

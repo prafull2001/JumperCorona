@@ -1,3 +1,5 @@
+local class = require("30logglobal")
+
 local environment = class()
 
 environment._name = "environment"
