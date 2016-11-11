@@ -12,15 +12,24 @@ local Physics = require("physics")
 Physics.start()
 
 
-local ninja = display.newImageRect("Ninja.JPG", 56, 80)
+local sky = display.newImage( "sky.jpg", 250, 75 )
+sky:scale( 1.5, 1.5 )
+
+local grass = display.newImage( "grass.png", 197, 300)
+
+
+
+local ninja = display.newImageRect("Ninja.JPG", 60 , 80)
 ninja.x = 75
-ninja.y = 250
+ninja.y = 260
+
+Physics.addBody(grass, "static", {bounce = 0})
 
 --giving ninja a physical body...
-Physics.addBody(ninja, "dynamic", {radius = 50, bounce = 0.3})
+Physics.addBody(ninja, "dynamic", {radius = 50, bounce = 0})
 
 local function Jump()
-	ninja:applyLinearImpulse(0, -0.75, ninja.x, ninja.y)
+	ninja:applyLinearImpulse(0, -0.4, ninja.x, ninja.y)
 	--Applying 0 force in the X direction and -0.75 in the Y direction. Y is negative because down is considered positive by the physics engine.
 	--Apply force to the center of the balloon, hence ninja.x & ninja.y
 end
@@ -28,6 +37,8 @@ end
 
 
 ninja:addEventListener("tap", Jump)
+
+
 
 
 
