@@ -26,12 +26,12 @@ ninja.y = 260
 Physics.addBody(grass, "static", {bounce = 0})
 
 --giving ninja a physical body...
-Physics.addBody(ninja, "dynamic", {radius = 50, bounce = 0})
+Physics.addBody(ninja, "dynamic", {radius = 20, bounce = 0})
 
 local function Jump()
 
 	--work on decreasing air time by increasing gravity...
-	ninja:applyLinearImpulse(0, -0.4, ninja.x, ninja.y)
+	ninja:applyLinearImpulse(0, -0.075, ninja.x, ninja.y)
 	--Applying 0 force in the X direction and -0.75 in the Y direction. Y is negative because down is considered positive by the physics engine.
 	--Apply force to the center of the ninja, hence ninja.x & ninja.y
 end
