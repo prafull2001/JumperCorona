@@ -1,37 +1,34 @@
-local class = require("30logglobal")
+local hero = {}
 
-local hero = class()
-
-hero.__name = "hero"
-
-function hero:__init(aName, anX, aY)
-	self.name = aName
-	self.x = anX
-	self.y = aY
+local Physics = require("physics")
+Physics.start()
 
 
+function hero.drawHero()
+ 
+	print("hero - loading hero...")
 
-	
-	
-	--self.image = ninjaImage
-	--Physics.addBody(ninjaImage, "dynamic", {radius = 50, bounce = .3})
+	greenGuysheet = graphics.newImageSheet( "greenman.png", { width=128, height=128, numFrames=15 } )
 
-	
-	print("Printing Something" .. self.name .. "<<")
-	print("Printing Something else" .. self.image.x .. "<<")
+	-- play 15 frames every 500 ms
+	instance2 = display.newSprite( greenGuysheet, {start=1, count=15, time=500 } )
+	instance2.name = "greenGuy"
+	Physics.addBody(instance2, "dynamic", {radius = 20, bounce = 0})
+	instance2.x =100
+	instance2.y = 260	
+	instance2.gravityScale = 2.5
 
-end
-
-
-function hero:jump()
-
-	--ninjaImage:applyLinearImpulse(0, -0.75, self.x, self.y)
+	instance2:play()
 
 end
+
+
+
+
+
+function hero.sayHello()
+	print("hero - Hello....")
+end
+
 
 return hero
-
-
-
-
-
