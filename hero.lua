@@ -1,26 +1,37 @@
-local hero = {}
-local hero_mt = {_index = hero}
+local class = require("30logglobal")
+
+local hero = class()
+
+hero.__name = "hero"
+
+function hero:__init(aName, anX, aY)
+	self.name = aName
+	self.x = anX
+	self.y = aY
 
 
 
-local function animate()
+	
+	
+	--self.image = ninjaImage
+	--Physics.addBody(ninjaImage, "dynamic", {radius = 50, bounce = .3})
+
+	
+	print("Printing Something" .. self.name .. "<<")
+	print("Printing Something else" .. self.image.x .. "<<")
 
 end
 
 
-function hero.new (name, positionX, positionY)
-	local newHero = {
-		name = name,
-		positionX = positionX or 0,
-		positionY = positionY or 0
-	}
+function hero:jump()
 
-	return setmetatable( newHero, herp_mt )
-end
-
-function hero:Jump(amount)
+	--ninjaImage:applyLinearImpulse(0, -0.75, self.x, self.y)
 
 end
 
 return hero
+
+
+
+
 
