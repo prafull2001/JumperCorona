@@ -6,6 +6,9 @@ Physics.start()
 
 function mainmenu.drawMainMenu()
 	
+	menuTheme = audio.loadStream("Music/menuTheme.ogg")
+	menuThemeChannel = audio.play( menuTheme, { channel=1, loops=-1, fadein=3000 } )
+
 	background = display.newImage("menuBackground.png")
 	background.x = display.contentCenterX
 	background.y = display.contentCenterY
@@ -22,21 +25,36 @@ end
 
 function mainmenu.play()
 	print("mainmenu - tap registered, preparing to load game..")
-	--MODE = 1 
+
+	audio.stop(1)
 
 	myScene.sayHello()
 	myScene.drawScene()
 
 	
 	myHero.sayHello()
-	myHero.drawHero()
+	myHero.drawHero() 
 
-	
+
+
+	myGoomba.hello()
+	myGoomba.drawBadGuy()
+
+
 	myButtons.sayHello()
 	myButtons.drawButtons()
 
+
+	myGoomba.move()
+
+
+	gameTheme = audio.loadStream("Music/playTheme.ogg")
+	gameThemeChannel = audio.play( gameTheme, { channel=2, loops=-1, fadein=0 } )
+
+
 	jumpButton:addEventListener("tap", myButtons.jump)
 	backButton:addEventListener("tap", myButtons.goBack)
+
 
 end
 

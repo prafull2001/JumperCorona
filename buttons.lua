@@ -26,16 +26,19 @@ function buttons.jump()
 
 	--work on decreasing air time by increasing gravity...
 	instance2:applyLinearImpulse(0, -0.12, instance2.x, instance2.y)
-	--Applying 0 force in the X direction and -0.75 in the Y direction. Y is negative because 
+	--Applying 0 force in the X direction and -0.12 in the Y direction. Y is negative because 
 	--down is considered positive by the physics engine.
 	--Apply force to the center of the green guy, hence instance.x & instance.y
+	
 
 end
 
 
 function buttons.goBack()
 	print("buttons - loading main menu...")
+	audio.stop(2)
 	myMenu.drawMainMenu()
+	--reset gravity and jump-impulse values here
 
 end
 

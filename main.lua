@@ -8,56 +8,38 @@ local Physics = require("physics")
 Physics.start()
 
 
+centerX = display.contentCenterX
+centerY = display.contentCenterY
+
+
+
 myScene = require("scene")
 myHero = require("hero")
+myGoomba = require("badguy")
 myButtons = require("buttons")
 myMenu = require("mainmenu")
+
 
 myMenu.drawMainMenu()
 playButton:addEventListener( "tap", myMenu.play )
 
+
+
+
+
 --[[
-if MODE == 0 then
-	myMenu.sayHello()
-	myMenu.drawMainMenu()
-
-
-	playButton:addEventListener( "tap", myMenu.play )
-end
-
-
-
-if MODE == 1 then
-
-	print("main - preparing to draw game...")
-	myScene.sayHello()
-	myScene.drawScene()
-
-	
-	myHero.sayHello()
-	myHero.drawHero()
-
-	
-	myButtons.sayHello()
-	myButtons.drawButtons()
-
-	jumpButton:addEventListener("tap", myButtons.jump)
-	backButton:addEventListener("tap", myButtons.goBack)
-end
-
-]]
-
-
 function onCollision( event )
 	if (event.phase == "began") then
 		print("began: " .. "The " .. event.object1.name .. " hit the " .. event.object2.name .. ".")
+		local youLose = display.newText("You Lose!", display.contentCenterX, 20, native.systemFont, 40)
+		youLose:setFillColor(0, 0, 0)
 	end
 end
-
-
 Runtime:addEventListener( "collision", onCollision )
+]]
 
---jumpButton:addEventListener( "tap", myButtons.jump)
+
+
 
 
 
