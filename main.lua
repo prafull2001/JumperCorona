@@ -1,33 +1,46 @@
----------------------------------s--------------------------------------------------------
+-----------------------------------------------------------------------------------------
 --
 -- main.lua
 
 
 
-
-
 local Physics = require("physics")
-
-
 Physics.start()
 
 
-local ninja = display.newImageRect("Ninja.JPG", 56, 80)
-ninja.x = 75
-ninja.y = 250
+centerX = display.contentCenterX
+centerY = display.contentCenterY
 
---giving ninja a physical body...
-Physics.addBody(ninja, "dynamic", {radius = 50, bounce = 0.3})
 
-local function Jump()
-	ninja:applyLinearImpulse(0, -0.75, ninja.x, ninja.y)
-	--Applying 0 force in the X direction and -0.75 in the Y direction. Y is negative because down is considered positive by the physics engine.
-	--Apply force to the center of the balloon, hence ninja.x & ninja.y
+
+myScene = require("scene")
+myHero = require("hero")
+myGoomba = require("badguy")
+myButtons = require("buttons")
+myMenu = require("mainmenu")
+
+
+myMenu.drawMainMenu()
+playButton:addEventListener( "tap", myMenu.play )
+
+
+
+
+
+--[[
+function onCollision( event )
+	if (event.phase == "began") then
+		print("began: " .. "The " .. event.object1.name .. " hit the " .. event.object2.name .. ".")
+		local youLose = display.newText("You Lose!", display.contentCenterX, 20, native.systemFont, 40)
+		youLose:setFillColor(0, 0, 0)
+	end
 end
+Runtime:addEventListener( "collision", onCollision )
+]]
 
 
 
-ninja:addEventListener("tap", Jump)
+
 
 
 
