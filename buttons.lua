@@ -40,7 +40,10 @@ function buttons.goBack()
 	myMenu.drawMainMenu()
 	jumpButton:removeEventListener( "tap", myButtons.jump )
 	backButton:removeEventListener( "tap", myButtons.goBack )
+	playButton:addEventListener( "tap", myMenu.play )
 	--reset gravity and jump-impulse values here
+	collectgarbage( "collect" )
+
 
 end
 

@@ -5,9 +5,7 @@ Physics.start()
 
 
 function mainmenu.drawMainMenu()
-	
-	playButton:removeEventListener( "tap", myMenu.play )
-	
+
 	menuTheme = audio.loadStream("Music/menuTheme.ogg")
 	menuThemeChannel = audio.play( menuTheme, { channel=1, loops=-1, fadein=3000 } )
 
@@ -21,14 +19,13 @@ function mainmenu.drawMainMenu()
 	playButton.y = display.contentCenterY - 75
 	playButton:scale( .3, .3 )
 
-
 end
 
 
 function mainmenu.play()
 	print("mainmenu - tap registered, preparing to load game..")
 
-	
+	playButton:removeEventListener( "tap", myMenu.play )
 
 	audio.stop(1)
 
@@ -57,6 +54,7 @@ function mainmenu.play()
 
 	jumpButton:addEventListener("tap", myButtons.jump)
 	backButton:addEventListener("tap", myButtons.goBack)
+
 
 
 end
