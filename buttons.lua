@@ -25,7 +25,7 @@ end
 function buttons.jump()
 
 	--work on decreasing air time by increasing gravity...
-	instance2:applyLinearImpulse(0, -0.12, instance2.x, instance2.y)
+	instance2:applyLinearImpulse(0, -0.2, instance2.x, instance2.y)
 	--Applying 0 force in the X direction and -0.12 in the Y direction. Y is negative because 
 	--down is considered positive by the physics engine.
 	--Apply force to the center of the green guy, hence instance.x & instance.y
