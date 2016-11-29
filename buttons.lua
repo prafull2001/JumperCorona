@@ -38,6 +38,8 @@ function buttons.goBack()
 	print("buttons - loading main menu...")
 	audio.stop(2)
 	myMenu.drawMainMenu()
+	jumpButton:removeEventListener( "tap", myButtons.jump )
+	backButton:removeEventListener( "tap", myButtons.goBack )
 	--reset gravity and jump-impulse values here
 
 end

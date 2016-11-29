@@ -36,7 +36,6 @@ function mainmenu.play()
 	myHero.drawHero() 
 
 
-
 	myGoomba.hello()
 	myGoomba.drawBadGuy()
 
