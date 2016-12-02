@@ -1,5 +1,3 @@
---scene.lua
-
 local scene = {}
 
 local Physics = require("physics")
