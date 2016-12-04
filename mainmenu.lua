@@ -48,6 +48,7 @@ function mainmenu.play()
 
 
 	myGoomba.move()
+	--myGoomba.detectCollision()
 
 
 	gameTheme = audio.loadStream("Music/playTheme.ogg")

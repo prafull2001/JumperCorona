@@ -13,6 +13,7 @@ function scene.drawScene()
 	grass2 = display.newImage("grass.png", 290, 300)
 	grass2.name = "grass2"
 	grass3 = display.newImage( "grass.png", 197, -30)
+	grass3.name = "grass3"
 
 	Physics.addBody(grass1, "static", {bounce = 0})
 	Physics.addBody(grass2, "static", {bounce = 0})
