@@ -30,7 +30,7 @@ function onCollision( event )
 		
 		if (event.object1.name == "greenGuy" and event.object2.name == "Asteroid 1") then
 			myLoseScreen.drawYouLose()
-			break
+			
 		elseif (event.object1.name == "greenGuy" and event.object2.name == "Asteroid 2") then
 			myLoseScreen.drawYouLose()
 			
