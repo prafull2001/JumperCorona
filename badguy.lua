@@ -52,13 +52,8 @@ function badguy.move()
 	for i = 1, #obstacle, 1 do
 		obstacle[i]:setLinearVelocity( -100, 0 )
 
-			if (obstacle[i].x < 100) then
-				print("if statement activated")
-
-				obstacle[i]:setLinearVelocity( 0, 0 )
-			end
-
 	end
+	
 end
 
 
