@@ -4,10 +4,6 @@ local Physics = require("physics")
 Physics.start()
 
 
-centerX = display.contentCenterX
-centerY = display.contentCenterY
-
-
 
 myScene = require("scene")
 myHero = require("hero")
@@ -39,9 +35,7 @@ function onCollision( event )
 			
 		end
 
-		--print("began: " .. "The " .. event.object1.name .. " hit the " .. event.object2.name .. ".")
-		--local youLose = display.newText("You Lose!", display.contentCenterX, 20, native.systemFont, 40)
-		--youLose:setFillColor(0, 0, 0)
+		
 	end
 
 end
