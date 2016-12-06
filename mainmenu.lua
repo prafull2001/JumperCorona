@@ -6,6 +6,7 @@ Physics.start()
 
 function mainmenu.drawMainMenu()
 
+
 	menuTheme = audio.loadStream("Music/menuTheme.ogg")
 	menuThemeChannel = audio.play( menuTheme, { channel=1, loops=-1, fadein=3000 } )
 

@@ -7,12 +7,7 @@ Physics.start()
 function youlose.drawYouLose()
 
 
- 	physics.removeBody( instance2 )
-	physics.removeBody(obstacle[1])
-	physics.removeBody(obstacle[2])
-	physics.removeBody(obstacle[3])
-	jumpButton:removeEventListener( "tap", myButtons.jump )
-	backButton:removeEventListener( "tap", myButtons.goBack )
+ 	
 	print("youlose - loading youlose...")
 
 	youlosescreen = display.newImage( "gameover.png", 250, 168 )
@@ -62,8 +57,8 @@ function youlose.restart()
 	physics.removeBody(grass1)
 	physics.removeBody(grass2)
 	physics.removeBody(grass3)
-	--jumpButton:removeEventListener( "tap", myButtons.jump )
-	--backButton:removeEventListener( "tap", myButtons.goBack )
+	jumpButton:removeEventListener( "tap", myButtons.jump )
+	backButton:removeEventListener( "tap", myButtons.goBack )
 	restartButton:removeEventListener( "tap", myLoseScreen.restart )
 	print("cleanup done")
 
