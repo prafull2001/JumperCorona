@@ -23,8 +23,6 @@ function youlose.drawYouLose()
 
 	audio.stop(2)
 
-
-	collectgarbage( "collect" )
 	
 
 end
@@ -49,18 +47,22 @@ end
 
 function youlose.restart()
 
-
-	physics.removeBody( instance2 )
-	physics.removeBody(obstacle[1])
-	physics.removeBody(obstacle[2])
-	physics.removeBody(obstacle[3])
-	physics.removeBody(grass1)
-	physics.removeBody(grass2)
-	physics.removeBody(grass3)
+--
+	Physics.removeBody( instance2 )
+	Physics.removeBody(obstacle[1])
+	Physics.removeBody(obstacle[2])
+	Physics.removeBody(obstacle[3])
+	Physics.removeBody(grass1)
+	Physics.removeBody(grass2)
+	Physics.removeBody(grass3)
 	jumpButton:removeEventListener( "tap", myButtons.jump )
 	backButton:removeEventListener( "tap", myButtons.goBack )
 	restartButton:removeEventListener( "tap", myLoseScreen.restart )
+	
+
+	
 	print("cleanup done")
+
 
 	myScene.sayHello()
 	myScene.drawScene()

@@ -5,6 +5,7 @@ Physics.start()
 
 
 function buttons.drawButtons()
+	
 	jumpButton = display.newImage( "button.png")
 	jumpButton.x = 473
 	jumpButton.y = 305
@@ -40,10 +41,10 @@ end
 function buttons.goBack()
 	print("buttons - loading main menu...")
 	audio.stop(2)
-	physics.removeBody( instance2 )
-	physics.removeBody(obstacle[1])
-	physics.removeBody(obstacle[2])
-	physics.removeBody(obstacle[3])
+	Physics.removeBody( instance2 )
+	Physics.removeBody(obstacle[1])
+	Physics.removeBody(obstacle[2])
+	Physics.removeBody(obstacle[3])
 	myMenu.drawMainMenu()
 	jumpButton:removeEventListener( "tap", myButtons.jump )
 	backButton:removeEventListener( "tap", myButtons.goBack )

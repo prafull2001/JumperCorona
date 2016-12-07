@@ -19,8 +19,6 @@ playButton:addEventListener( "tap", myMenu.play )
 
 
 
-
-
 function onCollision( event )
 	if (event.phase == "began") then
 		
@@ -40,7 +38,3 @@ function onCollision( event )
 
 end
 Runtime:addEventListener( "collision", onCollision )
-
-
-
-
