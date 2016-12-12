@@ -15,6 +15,8 @@ end
 
 function badguy.drawBadGuy()
 
+	myGoomba.hello()
+
 	obstacle = {}
 
 	obstacle[1] = display.newImage( "asteroid.png")
@@ -58,7 +60,13 @@ end
 
 
 
+function badguy.cleanUp()
 
+	Physics.removeBody(obstacle[1])
+	Physics.removeBody(obstacle[2])
+	Physics.removeBody(obstacle[3])
+
+end
 
 
 

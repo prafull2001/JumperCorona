@@ -6,28 +6,47 @@ Physics.start()
 
 function hero.drawHero()
  
-	print("hero - loading hero...")
+	myHero.sayHello()
 
-	greenGuysheet = graphics.newImageSheet( "greenman.png", { width=128, height=128, numFrames=15 } )
+	heroSheet = graphics.newImageSheet( "greenman.png", { width=128, height=128, numFrames=15 } )
 
 	-- play 15 frames every 500 ms
-	instance2 = display.newSprite( greenGuysheet, {start=1, count=15, time=500 } )
-	instance2.name = "greenGuy"
-	Physics.addBody(instance2, "dynamic", {radius = 20, bounce = 0})
-	instance2.x =100
-	instance2.y = 260	
-	instance2.gravityScale = 2.5
-
-	instance2:play()
+	heroObject = display.newSprite( heroSheet, {start=1, count=15, time=500 } )
+	heroObject.name = "greenGuy"
+	Physics.addBody(heroObject, "dynamic", {radius = 20, bounce = 0})
+	heroObject.x =100
+	heroObject.y = 260	
+	heroObject.gravityScale = 2.5
+	-- call inbuilt play() function available to Sprite objects
+	heroObject:play()
 
 end
 
 
 
+function hero.jump()
+
+	--work on decreasing air time by increasing gravity...
+	heroObject:applyLinearImpulse(0, -0.2, heroObject.x, heroObject.y)
+	print("AFTER JUMP Hero Object.X = " .. heroObject.x .. "<<")
+	--Applying 0 force in the X direction and -0.12 in the Y direction. Y is negative because 
+	--down is considered positive by the physics engine.
+	--Apply force to the center of the green guy, hence instance.x & instance.y
+	
+end
+
 
 
 function hero.sayHello()
 	print("hero - Hello....")
+end
+
+
+
+function hero.cleanUp()
+
+	Physics.removeBody(heroObject)
+
 end
 
 

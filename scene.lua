@@ -5,6 +5,10 @@ Physics.start()
 
 
 function scene.drawScene()
+
+	myScene.sayHello()
+
+
 	sky = display.newImage( "sky.jpg", 250, 75 )
 	sky:scale( 1.5, 1.5 )
 
@@ -19,11 +23,39 @@ function scene.drawScene()
 	Physics.addBody(grass2, "static", {bounce = 0})
 	Physics.addBody(grass3, "static", {bounce = 0})
 
+
+	myHero.drawHero() 
+
+	myGoomba.drawBadGuy()
+	myGoomba.move()
+
+	myButtons.drawButtons()
+
+
+	gameTheme = audio.loadStream("Music/playTheme.ogg")
+	gameThemeChannel = audio.play( gameTheme, { channel=2, loops=-1, fadein=0 } )
+
 end
+
+
+
+function scene.cleanUp()
+
+	myHero.cleanUp()
+	myGoomba.cleanUp()
+	myButtons.cleanUp()
+
+	Physics.removeBody(grass1)
+	Physics.removeBody(grass2)
+	Physics.removeBody(grass3)
+
+end
+
 
 
 function scene.sayHello()
 	print("scene - Hello....")
+	-- you can insert splash screen that appears prior to game start here...
 end
 
 

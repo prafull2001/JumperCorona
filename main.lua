@@ -1,4 +1,30 @@
+function onCollision( event )
+	-- event.phase is a Corona-provided global varible that provides information on what phase the event (in this case collision) is in
+	if (event.phase == "began") then
 
+		obj1 = event.object1.name
+		obj2 = event.object2.name
+		
+		if (obj1 == "greenGuy") then
+			if (obj2 == "Asteroid 1" or obj2 == "Asteroid 2" or obj2 == "Asteroid 3") then
+				event.phase = "ended"
+				myLoseScreen.drawYouLose()
+			else
+				print("Object 2 hitting hero is:" .. obj2 .. "<<")
+			end
+		elseif  (obj2 == "greenGuy") then
+			if (obj1 == "Asteroid 1" or obj1 == "Asteroid 2" or obj1 == "Asteroid 3") then
+				event.phase = "ended"
+				myLoseScreen.drawYouLose()
+			else
+				print("Object 1 hitting hero is:" .. obj1 .. "<<")
+			end
+		end	
+	end
+
+end
+
+-- code starts now
 
 local Physics = require("physics")
 Physics.start()
@@ -14,27 +40,6 @@ myLoseScreen = require("youlose")
 
 
 myMenu.drawMainMenu()
-playButton:addEventListener( "tap", myMenu.play )
-
-
-
-
-function onCollision( event )
-	if (event.phase == "began") then
-		
-		if (event.object1.name == "greenGuy" and event.object2.name == "Asteroid 1") then
-			myLoseScreen.drawYouLose()
-			
-		elseif (event.object1.name == "greenGuy" and event.object2.name == "Asteroid 2") then
-			myLoseScreen.drawYouLose()
-			
-		elseif (event.object1.name == "greenGuy" and event.object2.name == "Asteroid 3") then
-			myLoseScreen.drawYouLose()
-			
-		end
-
-		
-	end
-
-end
 Runtime:addEventListener( "collision", onCollision )
+
+

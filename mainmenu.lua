@@ -15,10 +15,14 @@ function mainmenu.drawMainMenu()
 	background.y = display.contentCenterY
 	background:scale(1.2, 1.2)
 
+	-- create Global button variable - 'playButton'
 	playButton = display.newImage("playButton.png")
 	playButton.x = display.contentCenterX
 	playButton.y = display.contentCenterY - 75
 	playButton:scale( .3, .3 )
+
+	-- add event listener to 'playButton' global variable that was created in drawMainMenu()
+	playButton:addEventListener( "tap", myMenu.play )
 
 end
 
@@ -32,34 +36,7 @@ function mainmenu.play()
 
 	audio.stop(1)
 
-	myScene.sayHello()
 	myScene.drawScene()
-
-	
-	myHero.sayHello()
-	myHero.drawHero() 
-
-
-	myGoomba.hello()
-	myGoomba.drawBadGuy()
-
-
-	myButtons.sayHello()
-	myButtons.drawButtons()
-
-
-	myGoomba.move()
-	--myGoomba.detectCollision()
-
-
-	gameTheme = audio.loadStream("Music/playTheme.ogg")
-	gameThemeChannel = audio.play( gameTheme, { channel=2, loops=-1, fadein=0 } )
-
-
-	jumpButton:addEventListener("tap", myButtons.jump)
-	backButton:addEventListener("tap", myButtons.goBack)
-
-
 
 end
 
