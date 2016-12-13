@@ -41,6 +41,8 @@ function badguy.drawBadGuy()
 	obstacle[3].name = "Asteroid 3"
 	Physics.addBody(obstacle[3], "dynamic", {radius = 20, bounce = 0})
 
+	Runtime:addEventListener("enterFrame", myGoomba.move)
+
 
 end
 
@@ -66,6 +68,7 @@ end
 
 function badguy.cleanUp()
 
+	Runtime:removeEventListener("enterFrame", myGoomba.move)
 	Physics.removeBody(obstacle[1])
 	Physics.removeBody(obstacle[2])
 	Physics.removeBody(obstacle[3])
