@@ -52,9 +52,11 @@ function badguy.move()
 --game should restart upon contact	
 	
 	for i = 1, #obstacle, 1 do
-
+		if obstacle[i].x < 100 then
+			obstacle[i].x = 400
+		else
 			obstacle[i]:setLinearVelocity( -100, 0 )
-		
+		end
 
 	end
 	
