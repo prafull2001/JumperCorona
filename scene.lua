@@ -18,10 +18,16 @@ function scene.drawScene()
 	grass2.name = "grass2"
 	grass3 = display.newImage( "grass.png", 197, -30)
 	grass3.name = "grass3"
+	grass4 = display.newImage( "grass.png", 600, -30)
+	grass4.name = "grass4"
+	grass5 = display.newImage( "grass.png", 800, -30)
+	grass5.name = "grass5"
 
 	Physics.addBody(grass1, "static", {bounce = 0})
 	Physics.addBody(grass2, "static", {bounce = 0})
 	Physics.addBody(grass3, "static", {bounce = 0})
+	Physics.addBody(grass4, "static", {bounce = 0})
+	Physics.addBody(grass5, "static", {bounce = 0})
 
 
 	myHero.drawHero() 
@@ -48,6 +54,8 @@ function scene.cleanUp()
 	Physics.removeBody(grass1)
 	Physics.removeBody(grass2)
 	Physics.removeBody(grass3)
+	Physics.removeBody(grass4)
+	Physics.removeBody(grass5)
 
 end
 

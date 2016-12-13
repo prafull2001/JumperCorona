@@ -28,19 +28,19 @@ function badguy.drawBadGuy()
 	Physics.addBody(obstacle[1], "dynamic", {radius = 20, bounce = 0})
 
 	obstacle[2] = display.newImage( "asteroid.png")
-	obstacle[2].x = 400
+	obstacle[2].x = 500
 	obstacle[2].y = 275
 	obstacle[2]:scale(.7, .7)
 	obstacle[2].name = "Asteroid 2"
 	Physics.addBody(obstacle[2], "dynamic", {radius = 20, bounce = 0})
-
+--[[
 	obstacle[3] = display.newImage( "asteroid.png")
-	obstacle[3].x = 500
+	obstacle[3].x = 600
 	obstacle[3].y = 275
 	obstacle[3]:scale(.7, .7)
 	obstacle[3].name = "Asteroid 3"
 	Physics.addBody(obstacle[3], "dynamic", {radius = 20, bounce = 0})
-
+]]
 	Runtime:addEventListener("enterFrame", myGoomba.move)
 
 
@@ -54,8 +54,8 @@ function badguy.move()
 --game should restart upon contact	
 	
 	for i = 1, #obstacle, 1 do
-		if obstacle[i].x < 100 then
-			obstacle[i].x = 400
+		if obstacle[i].x < 0 then
+			obstacle[i].x = 500
 		else
 			obstacle[i]:setLinearVelocity( -100, 0 )
 		end
@@ -71,7 +71,7 @@ function badguy.cleanUp()
 	Runtime:removeEventListener("enterFrame", myGoomba.move)
 	Physics.removeBody(obstacle[1])
 	Physics.removeBody(obstacle[2])
-	Physics.removeBody(obstacle[3])
+	
 
 end
 

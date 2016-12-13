@@ -8,6 +8,8 @@ function youlose.drawYouLose()
 
  	myLoseScreen.sayHello()
 
+
+
 	youlosescreen = display.newImage( "gameover.png", 250, 168 )
 	youlosescreen:scale( 2, 2 )
 
