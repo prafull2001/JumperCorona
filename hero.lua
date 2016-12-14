@@ -17,6 +17,7 @@ function hero.drawHero()
 	heroObject.x =100
 	heroObject.y = 260	
 	heroObject.gravityScale = 2.5
+	--heroObject:scale(.1,.1)
 	-- call inbuilt play() function available to Sprite objects
 	heroObject:play()
 
@@ -27,14 +28,16 @@ end
 function hero.jump()
 
 	--work on decreasing air time by increasing gravity...
-	heroObject:applyLinearImpulse(0, -0.2, heroObject.x, heroObject.y)
-	print("AFTER JUMP Hero Object.X = " .. heroObject.x .. "<<")
+	if (hero.canJump == true) then
+		heroObject:applyLinearImpulse(0, -0.2, heroObject.x, heroObject.y)
+		print("AFTER JUMP Hero Object.X = " .. heroObject.x .. "<<")
+		hero.canJump = false
+	end
 	--Applying 0 force in the X direction and -0.12 in the Y direction. Y is negative because 
 	--down is considered positive by the physics engine.
 	--Apply force to the center of the green guy, hence instance.x & instance.y
 	
 end
-
 
 
 function hero.sayHello()
