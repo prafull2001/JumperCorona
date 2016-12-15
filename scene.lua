@@ -37,8 +37,12 @@ function scene.drawScene()
 
 	myButtons.drawButtons()
 
-	scoreText = display.newText(score, display.contentCenterX, 70, native.systemFont, 60)
-	highscoreText = display.newText(highScore, display.contentCenterX, 120, native.systemFont, 60)
+	scoreText = display.newText("Score: " ..score, display.contentCenterX, 70, native.systemFont, 30)
+	highscoreText = display.newText("Highscore: "..highScore, display.contentCenterX, 120, native.systemFont, 30)
+
+	if score > 3 then
+		sky = display.newImage("Background/City Background.tif", 250, 75)
+	end
 
 
 	gameTheme = audio.loadStream("Music/playTheme.ogg")
