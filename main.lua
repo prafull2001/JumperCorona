@@ -2,6 +2,9 @@ local Physics = require("physics")
 Physics.start()
 
 
+score = 0
+highScore = 0
+
 
 myScene = require("scene")
 myHero = require("hero")

@@ -55,9 +55,11 @@ function badguy.move()
 	
 	for i = 1, #obstacle, 1 do
 		if obstacle[i].x < 0 then
+			score = score + 1
+			scoreText.text = score
 			obstacle[i].x = 500
 		else
-			obstacle[i]:setLinearVelocity( -100, 0 )
+			obstacle[i]:setLinearVelocity( -150, 0 )
 		end
 
 	end

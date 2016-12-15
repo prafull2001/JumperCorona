@@ -31,6 +31,7 @@ function mainmenu.play()
 	
 
 	print("mainmenu - tap registered, preparing to load game..")
+	
 
 	playButton:removeEventListener( "tap", myMenu.play )
 

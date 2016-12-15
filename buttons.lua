@@ -39,6 +39,11 @@ function buttons.goBack()
 
 	myScene.cleanUp()
 
+	if score > highScore then
+		highScore = score 
+	end
+	score = 0
+
 	myMenu.drawMainMenu()
 
 end

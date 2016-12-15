@@ -37,6 +37,9 @@ function scene.drawScene()
 
 	myButtons.drawButtons()
 
+	scoreText = display.newText(score, display.contentCenterX, 70, native.systemFont, 60)
+	highscoreText = display.newText(highScore, display.contentCenterX, 120, native.systemFont, 60)
+
 
 	gameTheme = audio.loadStream("Music/playTheme.ogg")
 	gameThemeChannel = audio.play( gameTheme, { channel=2, loops=-1, fadein=0 } )

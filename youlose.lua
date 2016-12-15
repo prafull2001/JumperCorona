@@ -36,6 +36,12 @@ function youlose.restart()
 	restartButton:removeEventListener( "tap", myLoseScreen.restart )
 	--restartButton = nil
 
+	if score > highScore then
+		highScore = score 
+	end
+	score = 0
+
+
 	myMenu.play()
 
 end
