@@ -50,5 +50,7 @@ end
 
 
 
+
+
 myMenu.drawMainMenu()
 Runtime:addEventListener( "collision", onCollision )

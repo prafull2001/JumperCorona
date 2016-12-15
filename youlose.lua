@@ -4,6 +4,7 @@ local Physics = require("physics")
 Physics.start()
 
 
+
 function youlose.drawYouLose()
 
  	myLoseScreen.sayHello()
@@ -44,7 +45,11 @@ function youlose.restart()
 
 	myMenu.play()
 
+	--timer.performWithDelay( 3000, myLoseScreen.restart )
+
 end
+
+
 
 --restartButton:addEventListener( "tap", myLoseScreen.restart )
 
