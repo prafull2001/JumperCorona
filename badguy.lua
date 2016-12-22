@@ -20,7 +20,7 @@ function badguy.drawBadGuy()
 	obstacle = {}
 
 	obstacle[1] = display.newImage( "asteroid.png")
-	obstacle[1].x = 300
+	obstacle[1].x = 250
 	obstacle[1].y = 275 
 	obstacle[1]:scale(.7, .7)
 	obstacle[1].collType = "asteroid"
@@ -53,13 +53,16 @@ function badguy.move()
 --get badguy to spawn back at start after they cross a certain x value and
 --game should restart upon contact	
 	
+	
+
 	for i = 1, #obstacle, 1 do
 		if obstacle[i].x < 0 then
 			score = score + 1
 			scoreText.text = score
 			obstacle[i].x = 500
 		else
-			obstacle[i]:setLinearVelocity( -150, 0 )
+			aSpeed = math.random(-230, -100)
+			obstacle[i]:setLinearVelocity( aSpeed, 0 )
 		end
 
 	end

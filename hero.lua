@@ -14,7 +14,7 @@ function hero.drawHero()
 	heroObject = display.newSprite( heroSheet, {start=1, count=15, time=500 } )
 	heroObject.name = "greenGuy"
 	Physics.addBody(heroObject, "dynamic", {radius = 20, bounce = 0})
-	heroObject.x =100
+	heroObject.x = 50
 	heroObject.y = 260	
 	heroObject.gravityScale = 2.5
 	--heroObject:scale(.1,.1)

@@ -18,6 +18,7 @@ function youlose.drawYouLose()
 	restartButton:scale(.07,.07)
 
 	restartButton:addEventListener( "tap", myLoseScreen.restart )
+	
 	--Runtime:removeEventListener( "colliison", onCollision )
 	--backButton:removeEventListener( "tap", myButtons.goBack )
 	--jumpButton:removeEventListener( "tap", myButtons.jump )
@@ -29,6 +30,7 @@ end
 
 
 function youlose.restart()
+
 
 
 	myScene.cleanUp()
@@ -44,6 +46,8 @@ function youlose.restart()
 
 
 	myMenu.play()
+
+	
 
 	--timer.performWithDelay( 3000, myLoseScreen.restart )
 
