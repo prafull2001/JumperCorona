@@ -13,7 +13,7 @@ myButtons = require("buttons")
 myMenu = require("mainmenu")
 myLoseScreen = require("youlose")
 
-
+--collision event
 
 
 function onCollision( event )
