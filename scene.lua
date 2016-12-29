@@ -54,6 +54,7 @@ function scene.cleanUp()
 	myHero.cleanUp()
 	myGoomba.cleanUp()
 	myButtons.cleanUp()
+	--backButton:removeEventListener( "tap", myButtons.goBack )
 
 	Physics.removeBody(grass1)
 	Physics.removeBody(grass2)

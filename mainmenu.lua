@@ -6,6 +6,7 @@ Physics.start()
 
 function mainmenu.drawMainMenu()
 
+	print( "DRAW MAIN MENU =========================, MODE = " .. mode )
 
 	menuTheme = audio.loadStream("Music/menuTheme.ogg")
 	menuThemeChannel = audio.play( menuTheme, { channel=1, loops=-1, fadein=3000 } )
@@ -21,26 +22,60 @@ function mainmenu.drawMainMenu()
 	playButton.y = display.contentCenterY - 75
 	playButton:scale( .3, .3 )
 
-	-- add event listener to 'playButton' global variable that was created in drawMainMenu()
+	instructionsButton = display.newImage("instructionsButton.png")
+	instructionsButton.x = display.contentCenterX
+	instructionsButton.y = display.contentCenterY + 5
+	instructionsButton:scale(.3 , .3)
+
+	-- add event listener to 'playButton' and 'instructionsButton' global variables that were created in drawMainMenu()
 	playButton:addEventListener( "tap", myMenu.play )
+	instructionsButton:addEventListener( "tap", myMenu.showInstructions )
 
 end
 
 
 function mainmenu.play()
 	
+	myMenu.removeAllListeners()
+
+	mode = 0
 
 	print("mainmenu - tap registered, preparing to load game..")
-	
 
-	playButton:removeEventListener( "tap", myMenu.play )
+	
 
 	audio.stop(1)
 
 	myScene.drawScene()
 
+
 end
 
+
+function mainmenu.showInstructions()
+
+	myMenu.removeAllListeners()
+
+	mode = 1
+
+	print("mainmenu - tap registered, preparing to load instructions page...")
+
+	
+
+	audio.stop(1)
+
+	myInstructions.drawInstructions()
+
+
+end
+
+
+function mainmenu.removeAllListeners()
+
+	playButton:removeEventListener( "tap", myMenu.play )
+	instructionsButton:removeEventListener( "tap", myMenu.showInstructions )
+
+end
 
 
 function mainmenu.sayHello()

@@ -62,7 +62,7 @@ function badguy.move()
 			obstacle[i].x = 500
 		else
 			aSpeed = math.random(-230, -100)
-			obstacle[i]:setLinearVelocity( aSpeed, 0 )
+			obstacle[i]:setLinearVelocity( -200, 0 )
 		end
 
 	end

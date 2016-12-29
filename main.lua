@@ -4,7 +4,7 @@ Physics.start()
 
 score = 0
 highScore = 0
-
+mode = 100  -- 100 for Netutral, 0 for Play, 1 for Instructions, 2 for Credits
 
 myScene = require("scene")
 myHero = require("hero")
@@ -12,6 +12,7 @@ myGoomba = require("badguy")
 myButtons = require("buttons")
 myMenu = require("mainmenu")
 myLoseScreen = require("youlose")
+myInstructions = require("instructions")
 
 --collision event
 
