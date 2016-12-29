@@ -32,6 +32,17 @@ function buttons.drawButtons()
 		backButton2:scale(.11, .11)
 
 		backButton2:addEventListener("tap", myButtons.goBack)
+
+	elseif (mode == 2) then
+
+		backButton3 = display.newImage("backButton.png")
+		backButton3.x = display.contentCenterX - 245
+		backButton3.y = display.contentCenterY - 100
+		backButton3.name = "Back Button 3"
+		backButton3:scale(.11, .11)
+
+		backButton3:addEventListener("tap", myButtons.goBack)
+
 	end
 
 end
@@ -63,6 +74,15 @@ function buttons.goBack()
 	elseif (mode == 1) then
 		print ("buttons - exiting INSTRUCTIONS...")
 		myInstructions.cleanUp()
+
+		mode = 100
+
+		myMenu.drawMainMenu()
+
+	elseif (mode == 2) then
+		print("buttons - exiting CREDITS...")
+
+		myCredits.cleanUp()
 
 		mode = 100
 

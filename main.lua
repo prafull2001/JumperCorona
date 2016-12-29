@@ -13,6 +13,7 @@ myButtons = require("buttons")
 myMenu = require("mainmenu")
 myLoseScreen = require("youlose")
 myInstructions = require("instructions")
+myCredits = require("credits")
 
 --collision event
 

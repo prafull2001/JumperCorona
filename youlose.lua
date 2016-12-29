@@ -34,10 +34,11 @@ function youlose.drawYouLose()
 	--tmr = timer.performWithDelay( 3000, myLoseScreen.restart)
 
 
+	
 	restartButton:addEventListener( "tap", myLoseScreen.restart)	
 	--restartButton:addEventListener( "tap", timer.performWithDelay( 3000, myLoseScreen.restart)	 )	
 	--timer.cancel()
-
+	
 
 	
 	--timer.performWithDelay( 3000, myLoseScreen.restart)
