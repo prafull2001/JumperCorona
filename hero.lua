@@ -16,7 +16,7 @@ function hero.drawHero()
 	Physics.addBody(heroObject, "dynamic", {radius = 20, bounce = 0})
 	heroObject.x = 50
 	heroObject.y = 260	
-	heroObject.gravityScale = 2.5
+	heroObject.gravityScale = 2.75
 	--heroObject:scale(.1,.1)
 	-- call inbuilt play() function available to Sprite objects
 	heroObject:play()
@@ -29,7 +29,7 @@ function hero.jump()
 
 	--work on decreasing air time by increasing gravity...
 	if (hero.canJump == true) then
-		heroObject:applyLinearImpulse(0, -0.2, heroObject.x, heroObject.y)
+		heroObject:applyLinearImpulse(0, -0.17, heroObject.x, heroObject.y)
 		print("AFTER JUMP Hero Object.X = " .. heroObject.x .. "<<")
 		hero.canJump = false
 	end

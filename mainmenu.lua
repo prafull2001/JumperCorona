@@ -9,7 +9,7 @@ function mainmenu.drawMainMenu()
 	print( "DRAW MAIN MENU =========================, MODE = " .. mode )
 
 	menuTheme = audio.loadStream("Music/menuTheme.ogg")
-	menuThemeChannel = audio.play( menuTheme, { channel=1, loops=-1, fadein=3000 } )
+	menuThemeChannel = audio.play( menuTheme, { channel=1, loops=-1, fadein=0 } )
 
 	background = display.newImage("menuBackground.png")
 	background.x = display.contentCenterX

@@ -28,11 +28,12 @@ function badguy.drawBadGuy()
 	Physics.addBody(obstacle[1], "dynamic", {radius = 20, bounce = 0})
 
 	obstacle[2] = display.newImage( "asteroid.png")
-	obstacle[2].x = 500
+	obstacle[2].x = 530
 	obstacle[2].y = 275
 	obstacle[2]:scale(.7, .7)
 	obstacle[2].name = "Asteroid 2"
 	Physics.addBody(obstacle[2], "dynamic", {radius = 20, bounce = 0})
+	
 --[[
 	obstacle[3] = display.newImage( "asteroid.png")
 	obstacle[3].x = 600
@@ -59,10 +60,35 @@ function badguy.move()
 		if obstacle[i].x < 0 then
 			score = score + 1
 			scoreText.text = score
-			obstacle[i].x = 500
+			obstacle[i].x = 525
 		else
-			aSpeed = math.random(-230, -100)
-			obstacle[i]:setLinearVelocity( -200, 0 )
+			if (score >= 5) then
+				aSpeed = math.random(-310, -150)
+			elseif (score >= 10) then
+				aSpeed = math.random(-430, -155)
+			elseif (score >= 20) then
+				aSpeed = math.random(-540, -160)
+			elseif (score >= 30) then
+				aSpeed = math.random(-650, -165)
+			elseif (score >= 40) then
+				aSpeed = math.random(-760, -170)
+			elseif (score >= 50) then
+				aSpeed = math.random(-870, -175)
+			elseif (score >= 60) then
+				aSpeed = math.random(-980, -180)
+			elseif (score >= 70) then
+				aSpeed = math.random(-1090, -185)
+			elseif (score >= 80) then
+				aSpeed = math.random(-1200, -190)
+			elseif (score >= 90) then
+				aSpeed = math.random(-1310, -195)
+			elseif (score >= 100) then
+				aSpeed = math.random(-2100, -200)
+
+			else 
+				aSpeed = math.random(-290, -150)
+			end
+			obstacle[i]:setLinearVelocity( aSpeed, 0 )
 		end
 
 	end

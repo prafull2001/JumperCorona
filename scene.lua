@@ -9,8 +9,8 @@ function scene.drawScene()
 	myScene.sayHello()
 
 
-	sky = display.newImage( "sky.jpg", 250, 75 )
-	sky:scale( 1.5, 1.5 )
+	background = display.newImage( "Background/Space.png", 250, 150)
+	background:scale( .5, .85 )
 
 	grass1 = display.newImage( "grass.png", 197, 300)
 	grass1.name = "grass1"
@@ -42,8 +42,8 @@ function scene.drawScene()
 	highscoreText = display.newText("Highscore: "..highScore, display.contentCenterX, 120, native.systemFont, 30)
 
 
-	gameTheme = audio.loadStream("Music/playTheme.ogg")
-	gameThemeChannel = audio.play( gameTheme, { channel=2, loops=-1, fadein=0 } )
+	gameTheme = audio.loadStream("Music/playTheme2.ogg")
+	gameThemeChannel = audio.play( gameTheme, { channel=2, loops=-1, fadein= 0 } )
 
 end
 

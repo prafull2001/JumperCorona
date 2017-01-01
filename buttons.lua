@@ -9,7 +9,7 @@ function buttons.drawButtons()
 
 	if (mode == 0) then
 		jumpButton = display.newImage( "button.png")
-		jumpButton.x = 473
+		jumpButton.x = 400
 		jumpButton.y = 305
 		jumpButton.name = "Jump Button"
 		jumpButton:scale( .2, .7 )
