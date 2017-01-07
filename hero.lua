@@ -8,10 +8,12 @@ function hero.drawHero()
  
 	myHero.sayHello()
 
+	
+
 	heroSheet = graphics.newImageSheet( "greenman.png", { width=128, height=128, numFrames=15 } )
 
 	-- play 15 frames every 500 ms
-	heroObject = display.newSprite( heroSheet, {start=1, count=15, time=500 } )
+	heroObject = display.newSprite( heroSheet, {start=1, count=16, time=500 } )
 	heroObject.name = "greenGuy"
 	Physics.addBody(heroObject, "dynamic", {radius = 20, bounce = 0})
 	heroObject.x = 50
@@ -43,6 +45,8 @@ end
 function hero.sayHello()
 	print("hero - Hello....")
 end
+
+
 
 
 

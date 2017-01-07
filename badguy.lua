@@ -19,7 +19,7 @@ function badguy.drawBadGuy()
 
 	obstacle = {}
 
-	obstacle[1] = display.newImage( "asteroid.png")
+	obstacle[1] = display.newImage( "roadSign.png")
 	obstacle[1].x = 250
 	obstacle[1].y = 275 
 	obstacle[1]:scale(.7, .7)
@@ -27,7 +27,7 @@ function badguy.drawBadGuy()
 	obstacle[1].name = "Asteroid 1"
 	Physics.addBody(obstacle[1], "dynamic", {radius = 20, bounce = 0})
 
-	obstacle[2] = display.newImage( "asteroid.png")
+	obstacle[2] = display.newImage( "roadSign.png")
 	obstacle[2].x = 530
 	obstacle[2].y = 275
 	obstacle[2]:scale(.7, .7)
@@ -54,9 +54,10 @@ function badguy.move()
 --get badguy to spawn back at start after they cross a certain x value and
 --game should restart upon contact	
 	
-	
+
 
 	for i = 1, #obstacle, 1 do
+
 		if obstacle[i].x < 0 then
 			score = score + 1
 			scoreText.text = score
@@ -71,19 +72,19 @@ function badguy.move()
 			elseif (score >= 30) then
 				aSpeed = math.random(-650, -165)
 			elseif (score >= 40) then
-				aSpeed = math.random(-760, -170)
+				aSpeed = math.random(-670, -170)
 			elseif (score >= 50) then
-				aSpeed = math.random(-870, -175)
+				aSpeed = math.random(-690, -175)
 			elseif (score >= 60) then
-				aSpeed = math.random(-980, -180)
+				aSpeed = math.random(-700, -180)
 			elseif (score >= 70) then
-				aSpeed = math.random(-1090, -185)
+				aSpeed = math.random(-720, -185)
 			elseif (score >= 80) then
-				aSpeed = math.random(-1200, -190)
+				aSpeed = math.random(-730, -190)
 			elseif (score >= 90) then
-				aSpeed = math.random(-1310, -195)
+				aSpeed = math.random(-740, -195)
 			elseif (score >= 100) then
-				aSpeed = math.random(-2100, -200)
+				aSpeed = math.random(-770, -200)
 
 			else 
 				aSpeed = math.random(-290, -150)

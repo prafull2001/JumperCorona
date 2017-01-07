@@ -9,8 +9,8 @@ function scene.drawScene()
 	myScene.sayHello()
 
 
-	background = display.newImage( "Background/Space.png", 250, 150)
-	background:scale( .5, .85 )
+	background = display.newImage( "Background/City.png", 250, 150)
+	background:scale( .35, .30 )
 
 	grass1 = display.newImage( "grass.png", 197, 300)
 	grass1.name = "grass1"

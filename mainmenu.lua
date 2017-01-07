@@ -38,6 +38,7 @@ function mainmenu.drawMainMenu()
 	playButton:addEventListener( "tap", myMenu.play )
 	instructionsButton:addEventListener( "tap", myMenu.showInstructions )
 	creditsButton:addEventListener( "tap", myMenu.showCredits )
+	
 
 end
 
@@ -58,6 +59,8 @@ function mainmenu.play()
 
 
 end
+
+
 
 
 function mainmenu.showInstructions()
