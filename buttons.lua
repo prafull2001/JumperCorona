@@ -81,7 +81,7 @@ function buttons.goBack()
 
 	elseif (mode == 2) then
 		print("buttons - exiting CREDITS...")
-
+		audio.stop(3)
 		myCredits.cleanUp()
 
 		mode = 100
