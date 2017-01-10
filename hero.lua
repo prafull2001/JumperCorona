@@ -13,7 +13,7 @@ function hero.drawHero()
 	heroSheet = graphics.newImageSheet( "Sprite.tif", { width=1080, height=1080, numFrames=8 } )
 	--heroSheet = graphics.newImageSheet( "greenman.png", { width=128, height=128, numFrames=15 } )
 
---[[
+
 	-- play 15 frames every 500 ms
 	heroObject = display.newSprite( heroSheet, {start=1, count=8, time=500 } )
 	heroObject.name = "greenGuy"
@@ -27,7 +27,7 @@ function hero.drawHero()
 	--heroObject:scale(.1,.1)
 	-- call inbuilt play() function available to Sprite objects
 	heroObject:play()
-	]]
+
 
 end
 
