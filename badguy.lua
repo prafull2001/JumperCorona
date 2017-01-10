@@ -27,12 +27,21 @@ function badguy.drawBadGuy()
 	obstacle[1].name = "Asteroid 1"
 	Physics.addBody(obstacle[1], "dynamic", {radius = 20, bounce = 0})
 
+
 	obstacle[2] = display.newImage( "roadSign.png")
-	obstacle[2].x = 530
+	obstacle[2].x = 550
 	obstacle[2].y = 275
 	obstacle[2]:scale(.7, .7)
 	obstacle[2].name = "Asteroid 2"
 	Physics.addBody(obstacle[2], "dynamic", {radius = 20, bounce = 0})
+
+
+	obstacle[3] = display.newImage( "roadSign.png")
+	obstacle[3].x = 850
+	obstacle[3].y = 275
+	obstacle[3]:scale(.7, .7)
+	obstacle[3].name = "Asteroid 2"
+	Physics.addBody(obstacle[3], "dynamic", {radius = 20, bounce = 0})
 	
 --[[
 	obstacle[3] = display.newImage( "asteroid.png")
@@ -61,30 +70,30 @@ function badguy.move()
 		if obstacle[i].x < 0 then
 			score = score + 1
 			scoreText.text = score
-			obstacle[i].x = 525
+			obstacle[i].x = 800
 		else
 			if (score >= 5) then
-				aSpeed = math.random(-310, -150)
+				aSpeed = math.random(-310, -145)
 			elseif (score >= 10) then
-				aSpeed = math.random(-430, -155)
+				aSpeed = math.random(-430, -145)
 			elseif (score >= 20) then
-				aSpeed = math.random(-540, -160)
+				aSpeed = math.random(-540, -145)
 			elseif (score >= 30) then
-				aSpeed = math.random(-650, -165)
+				aSpeed = math.random(-650, -145)
 			elseif (score >= 40) then
-				aSpeed = math.random(-670, -170)
+				aSpeed = math.random(-670, -145)
 			elseif (score >= 50) then
-				aSpeed = math.random(-690, -175)
+				aSpeed = math.random(-674, -145)
 			elseif (score >= 60) then
-				aSpeed = math.random(-700, -180)
+				aSpeed = math.random(-680, -150)
 			elseif (score >= 70) then
-				aSpeed = math.random(-720, -185)
+				aSpeed = math.random(-690, -155)
 			elseif (score >= 80) then
-				aSpeed = math.random(-730, -190)
+				aSpeed = math.random(-700, -160)
 			elseif (score >= 90) then
-				aSpeed = math.random(-740, -195)
+				aSpeed = math.random(-710, -170)
 			elseif (score >= 100) then
-				aSpeed = math.random(-770, -200)
+				aSpeed = math.random(-720, -190)
 
 			else 
 				aSpeed = math.random(-290, -150)
@@ -103,6 +112,7 @@ function badguy.cleanUp()
 	Runtime:removeEventListener("enterFrame", myGoomba.move)
 	Physics.removeBody(obstacle[1])
 	Physics.removeBody(obstacle[2])
+	Physics.removeBody(obstacle[3])
 	
 
 end

@@ -8,38 +8,38 @@ function buttons.drawButtons()
 	myButtons.sayHello()
 
 	if (mode == 0) then
-		jumpButton = display.newImage( "button.png")
-		jumpButton.x = 400
-		jumpButton.y = 305
+		jumpButton = display.newImage( "Buttons/jumpButton.png")
+		jumpButton.x = 430
+		jumpButton.y = 300
 		jumpButton.name = "Jump Button"
-		jumpButton:scale( .2, .7 )
+		jumpButton:scale( .35, .35 )
 
-		backButton = display.newImage("backButton.png")
-		backButton.x = display.contentCenterX - 245
+		backButton = display.newImage("Buttons/backButton.png")
+		backButton.x = display.contentCenterX - 230
 		backButton.y = display.contentCenterY - 100
 		backButton.name = "Back Button"
-		backButton:scale(.11, .11)
+		backButton:scale(.75, .75)
 
 		-- add event listeners for created buttons
 		jumpButton:addEventListener("tap", myButtons.jump)
 		backButton:addEventListener("tap", myButtons.goBack)
 	elseif (mode == 1) then
 
-		backButton2 = display.newImage("backButton.png")
+		backButton2 = display.newImage("Buttons/backButton.png")
 		backButton2.x = display.contentCenterX - 245
 		backButton2.y = display.contentCenterY - 100
 		backButton2.name = "Back Button 2"
-		backButton2:scale(.11, .11)
+		backButton2:scale(.75, .75)
 
 		backButton2:addEventListener("tap", myButtons.goBack)
 
 	elseif (mode == 2) then
 
-		backButton3 = display.newImage("backButton.png")
+		backButton3 = display.newImage("Buttons/backButton.png")
 		backButton3.x = display.contentCenterX - 245
 		backButton3.y = display.contentCenterY - 100
 		backButton3.name = "Back Button 3"
-		backButton3:scale(.11, .11)
+		backButton3:scale(.75, .75)
 
 		backButton3:addEventListener("tap", myButtons.goBack)
 

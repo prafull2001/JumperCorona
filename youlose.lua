@@ -28,7 +28,7 @@ function youlose.drawYouLose()
 	youlosescreen = display.newImage( "gameover.png", 250, 168 )
 	youlosescreen:scale( 2, 2 )
 
-	restartButton = display.newImage("restartButton.png", 50, 230)
+	restartButton = display.newImage("Buttons/restartButton.png", 50, 230)
 	restartButton:scale(.07,.07)
 
 	--tmr = timer.performWithDelay( 3000, myLoseScreen.restart)

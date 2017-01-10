@@ -10,7 +10,7 @@ function scene.drawScene()
 
 
 	background = display.newImage( "Background/City.png", 240, 150)
-	background:scale( .30, .30 )
+	background:scale( .35, .35 )
 
 	grass1 = display.newImage( "grass.png", 197, 300)
 	grass1.name = "grass1"
@@ -18,9 +18,9 @@ function scene.drawScene()
 	grass2.name = "grass2"
 	grass3 = display.newImage( "grass.png", 197, -30)
 	grass3.name = "grass3"
-	grass4 = display.newImage( "grass.png", 600, -30)
+	grass4 = display.newImage( "grass.png", 600, 300)
 	grass4.name = "grass4"
-	grass5 = display.newImage( "grass.png", 800, -30)
+	grass5 = display.newImage( "grass.png", 800, 300)
 	grass5.name = "grass5"
 
 	Physics.addBody(grass1, "static", {bounce = 0})

@@ -17,20 +17,20 @@ function mainmenu.drawMainMenu()
 	background:scale(1.2, 1.2)
 
 	-- create Global button variable - 'playButton'
-	playButton = display.newImage("playButton.png")
+	playButton = display.newImage("Buttons/playButton.png")
 	playButton.x = display.contentCenterX
 	playButton.y = display.contentCenterY - 75
-	playButton:scale( .3, .3 )
+	--playButton:scale( .3, .3 )
 
-	instructionsButton = display.newImage("instructionsButton.png")
+	instructionsButton = display.newImage("Buttons/instructionsButton.png")
 	instructionsButton.x = display.contentCenterX
 	instructionsButton.y = display.contentCenterY + 5
-	instructionsButton:scale(.3 , .3)
+	--instructionsButton:scale(.3 , .3)
 
-	creditsButton = display.newImage("creditsButton.png")
+	creditsButton = display.newImage("Buttons/creditsButton.png")
 	creditsButton.x = display.contentCenterX
-	creditsButton.y = display.contentCenterY + 80
-	creditsButton:scale(.1, .1)
+	creditsButton.y = display.contentCenterY + 85
+	--creditsButton:scale(.1, .1)
 
 
 
