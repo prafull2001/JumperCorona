@@ -9,10 +9,10 @@ function buttons.drawButtons()
 
 	if (mode == 0) then
 		jumpButton = display.newImage( "Buttons/jumpButton.png")
-		jumpButton.x = 430
-		jumpButton.y = 300
+		jumpButton.x = display.contentCenterX
+		jumpButton.y = display.contentCenterY
 		jumpButton.name = "Jump Button"
-		jumpButton:scale( .35, .35 )
+		jumpButton:scale( .7, 2 )
 
 		backButton = display.newImage("Buttons/backButton.png")
 		backButton.x = display.contentCenterX - 230

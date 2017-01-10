@@ -37,9 +37,10 @@ function scene.drawScene()
 
 	myButtons.drawButtons()
 
-	scoreText = display.newText(score, display.contentCenterX + 35, 70, native.systemFont, 30)
-	thescoreText = display.newText("Score: ", display.contentCenterX - 25, 70, native.systemFont, 30)
-	highscoreText = display.newText("Highscore: "..highScore, display.contentCenterX, 120, native.systemFont, 30)
+	scoreText = display.newText(score, display.contentCenterX + 50, 90, native.systemFont, 30)
+	thescoreText = display.newText("Score: ", display.contentCenterX -10 , 90, native.systemFont, 30)
+	highscoreText = display.newText("Highscore: "..highScore, display.contentCenterX + 200, 30, native.systemFont, 30)
+
 
 
 	gameTheme = audio.loadStream("Music/playTheme2.ogg")

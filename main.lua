@@ -1,3 +1,6 @@
+display.setStatusBar( display.HiddenStatusBar )
+
+
 local Physics = require("physics")
 Physics.start()
 
