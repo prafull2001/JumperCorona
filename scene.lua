@@ -39,7 +39,7 @@ function scene.drawScene()
 
 	scoreText = display.newText(score, display.contentCenterX + 50, 90, native.systemFont, 30)
 	thescoreText = display.newText("Score: ", display.contentCenterX -10 , 90, native.systemFont, 30)
-	highscoreText = display.newText("Highscore: "..highScore, display.contentCenterX + 200, 30, native.systemFont, 30)
+	highscoreText = display.newText("Highscore: "..highScore, display.contentCenterX + 180, 30, native.systemFont, 30)
 
 
 

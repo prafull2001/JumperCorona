@@ -37,7 +37,7 @@ function badguy.drawBadGuy()
 
 
 	obstacle[3] = display.newImage( "roadSign.png")
-	obstacle[3].x = 850
+	obstacle[3].x = 830
 	obstacle[3].y = 275
 	obstacle[3]:scale(.7, .7)
 	obstacle[3].name = "Asteroid 2"
@@ -70,7 +70,7 @@ function badguy.move()
 		if obstacle[i].x < 0 then
 			score = score + 1
 			scoreText.text = score
-			obstacle[i].x = 800
+			obstacle[i].x = 850
 		else
 			if (score >= 5) then
 				aSpeed = math.random(-310, -145)
